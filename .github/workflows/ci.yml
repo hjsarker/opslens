@@ -7,7 +7,7 @@ permissions:
   contents: read
 jobs:
   python-and-sql:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,7 +20,7 @@ jobs:
       - name: Validate exported synthetic records
         run: python -m pipeline.validate_data
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: python-and-sql
     steps:
       - uses: actions/checkout@v4
