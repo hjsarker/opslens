@@ -4,6 +4,10 @@
 
 **[Open the live demo](https://opslens-hjsarkers-projects.vercel.app/)** | [Technical architecture](docs/ARCHITECTURE.md) | [Metric definitions](docs/METHODOLOGY.md)
 
+![OpsLens desktop overview showing synthetic service desk analytics](docs/desktop-overview.png)
+
+[See the mobile dashboard](docs/mobile-overview.png) · [CI checks](https://github.com/hjsarker/opslens/actions/workflows/ci.yml)
+
 OpsLens uses **3,200 synthetic incidents** and their full event histories to investigate SLA compliance, service workloads, ticket escalations, historical backlog and recurring issues. A deterministic Python pipeline creates the data and a real SQL aggregation step produces the reporting model. No employer, customer or employee records are used.
 
 ## Features
@@ -27,7 +31,7 @@ python -m http.server 8000
 # Open http://localhost:8000
 ```
 
-No Python libraries are needed for the default SQL build because it uses the built-in SQLite engine. To verify the same analytics against DuckDB when available:
+No Python libraries are needed for the default SQL build because it uses the built-in SQLite engine. Large uncompressed JSON and CSV exports are intentionally generated during the build rather than committed to Git. To verify the same analytics against DuckDB when available:
 
 ```bash
 python -m pip install duckdb
@@ -57,7 +61,7 @@ To run desktop, tablet and mobile browser checks, install Playwright and Chromiu
 
 ## Important boundaries
 
-All data is fictional. The demo does not access a real ITSM instance and does not claim machine-learning predictions. The "Policy lab" is an illustrative sensitivity test, not a live recalculation of stored incident history. The frontend is dependency-free JavaScript rather than React/TypeScript; this is an intentional performance and reproducibility choice for the portfolio MVP. A dedicated GitHub repository and automatic Git-to-Vercel deployment still require connecting the code to GitHub.
+All data is fictional. The demo does not access a real ITSM instance and does not claim machine-learning predictions. The "Policy lab" is an illustrative sensitivity test, not a live recalculation of stored incident history. The frontend is dependency-free JavaScript rather than React/TypeScript; this is an intentional performance and reproducibility choice for the portfolio MVP. The source is published in this GitHub repository with automated validation tests. Vercel production is currently deployed separately; automatic Git-to-Vercel deployment has not yet been configured.
 
 ## License
 
