@@ -1,0 +1,9 @@
+{
+  "region": "North Rhine-Westphalia, Germany",
+  "timezone": "Europe/Berlin",
+  "workingDays": [0, 1, 2, 3, 4],
+  "businessHours": [9, 17],
+  "excludeNrwPublicHolidays": true,
+  "extraClosures": [],
+  "description": "Demo policy based on NRW statutory holidays for 2025 and 2026. Change this config and regenerate the snapshot to explore alternate business-hour calendars."
+}
